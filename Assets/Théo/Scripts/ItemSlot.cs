@@ -1,26 +1,24 @@
-﻿/* 
-    ------------------- Code Monkey -------------------
-
-    Thank you for downloading this package
-    I hope you find it useful in your projects
-    If you have any questions let me know
-    Cheers!
-
-               unitycodemonkey.com
-    --------------------------------------------------
- */
-
-using System.Collections;
+﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.EventSystems;
 
 public class ItemSlot : MonoBehaviour, IDropHandler {
+    [SerializeField]
+    private string TheSearchedPiece = "";
 
-    public void OnDrop(PointerEventData eventData) {
-        Debug.Log("OnDrop");
+    public static int nombrePièceOk = 0;
+
+    public void OnDrop (PointerEventData eventData) {
         if (eventData.pointerDrag != null) {
-            eventData.pointerDrag.GetComponent<RectTransform>().anchoredPosition = GetComponent<RectTransform>().anchoredPosition;
+            eventData.pointerDrag.GetComponent<RectTransform> ().anchoredPosition = GetComponent<RectTransform> ().anchoredPosition;
+
+            if (eventData.pointerDrag.gameObject.name == TheSearchedPiece) {
+                nombrePièceOk += 1;
+                if (nombrePièceOk == 4) {
+                    Debug.Log ("Changement de scène");
+                }
+            }
         }
     }
 
