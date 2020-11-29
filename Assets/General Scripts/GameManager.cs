@@ -5,25 +5,14 @@ using UnityEngine.SceneManagement;
 
 public class GameManager : MonoBehaviour
 {
-    public string LevelToLoad;
-    // Start is called before the first frame update
-    void Start()
-    {
-        
-    }
+    string LevelToLoad;
 
-    // Update is called once per frame
-    void Update()
-    {
-        
-    }
-
-    void LoadLevel()
+    public void LoadLevel(string LevelToLoad)
     {
         SceneManager.LoadScene(LevelToLoad);
     }
 
-    void QuitGame()
+    public void QuitGame()
     {
         Application.Quit();
     }

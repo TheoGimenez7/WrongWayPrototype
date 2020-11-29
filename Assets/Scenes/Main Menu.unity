@@ -312,6 +312,7 @@ GameObject:
   - component: {fileID: 477740452}
   - component: {fileID: 477740450}
   - component: {fileID: 477740451}
+  - component: {fileID: 477740454}
   m_Layer: 5
   m_Name: PlayButton
   m_TagString: Untagged
@@ -392,16 +393,16 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 2146802800}
-        m_TargetAssemblyTypeName: UnityEngine.Object, UnityEngine
-        m_MethodName: 
+      - m_Target: {fileID: 2146802801}
+        m_TargetAssemblyTypeName: GameManager, Assembly-CSharp
+        m_MethodName: LoadLevel
         m_Mode: 5
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
           m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
           m_IntArgument: 0
           m_FloatArgument: 0
-          m_StringArgument: 
+          m_StringArgument: PuzzleScene
           m_BoolArgument: 0
         m_CallState: 2
 --- !u!222 &477740452
@@ -432,6 +433,18 @@ RectTransform:
   m_AnchoredPosition: {x: 0, y: 0}
   m_SizeDelta: {x: 300, y: 110}
   m_Pivot: {x: 0.5, y: 0.5}
+--- !u!114 &477740454
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 477740449}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: d13e885b10e747e459d52ca51c5ea00a, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &1013471035
 GameObject:
   m_ObjectHideFlags: 0
@@ -1086,7 +1099,19 @@ MonoBehaviour:
   m_TargetGraphic: {fileID: 477740450}
   m_OnClick:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 2146802801}
+        m_TargetAssemblyTypeName: GameManager, Assembly-CSharp
+        m_MethodName: QuitGame
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!114 &1798336960
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1229,7 +1254,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: d13e885b10e747e459d52ca51c5ea00a, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  LevelToLoad: 
 --- !u!4 &2146802802
 Transform:
   m_ObjectHideFlags: 0

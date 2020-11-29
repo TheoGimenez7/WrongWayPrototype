@@ -11,4 +11,13 @@ EditorBuildSettings:
   - enabled: 1
     path: Assets/Scenes/Main Menu.unity
     guid: e6bfd4c74771b9a479a69233936210f5
+  - enabled: 1
+    path: "Assets/L\xE9o/PuzzleScene.unity"
+    guid: 141cb2492e2be80408d6fa6c527db64f
+  - enabled: 1
+    path: Assets/Alexandre/FixThePipes.unity
+    guid: dd6075b9326edf5468920cf9d7348989
+  - enabled: 1
+    path: "Assets/Th\xE9o/GameScene_DragDrop.unity"
+    guid: f2c65fc1590684744be909105b931335
   m_configObjects: {}
