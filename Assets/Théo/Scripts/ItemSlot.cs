@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.EventSystems;
+using System;
 
 public class ItemSlot : MonoBehaviour, IDropHandler {
     [SerializeField]
@@ -18,8 +19,15 @@ public class ItemSlot : MonoBehaviour, IDropHandler {
             if (eventData.pointerDrag.gameObject.name == TheSearchedPiece) {
                 nombrePièceOk += 1;
                 if (nombrePièceOk == 4) {
-                    GameManager.levelsCleared += 1;
-                    manager.GetComponent<GameManager>().LoadLevel("GameOver");
+                    if (GlobalCountDown.TimeLeft >= TimeSpan.Zero)
+                    {
+                        GameManager.levelsCleared += 1;
+                        manager.GetComponent<GameManager>().LoadLevel("GameOver");
+                    }
+                    else
+                    {
+                        manager.GetComponent<GameManager>().LoadLevel("GameOver");
+                    }
                 }
             }
         }

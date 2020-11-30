@@ -1,6 +1,7 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using System;
 
 public class PipesAllOk : MonoBehaviour
 {
@@ -28,9 +29,16 @@ public class PipesAllOk : MonoBehaviour
             }
             if(i == pipes.Length - 1)
             {
-                GameManager.levelsCleared += 1;
-                manager.GetComponent<GameManager>().LoadLevel("GameScene_DragDrop");
-                break;
+                if (GlobalCountDown.TimeLeft >= TimeSpan.Zero)
+                {
+                    GameManager.levelsCleared += 1;
+                    manager.GetComponent<GameManager>().LoadLevel("GameScene_DragDrop");
+                    break;
+                }
+                else
+                {
+                    manager.GetComponent<GameManager>().LoadLevel("GameOver");
+                }
             }
         }
     }

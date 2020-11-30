@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.Rendering;
+using System;
 
 public class PiecesScript : MonoBehaviour
 {
@@ -14,7 +15,7 @@ public class PiecesScript : MonoBehaviour
     void Start()
     {
         RightPosition = transform.position;
-        transform.position = new Vector3(Random.Range(3f, 8f), Random.Range(3f, -3f));
+        transform.position = new Vector3(UnityEngine.Random.Range(3f, 8f), UnityEngine.Random.Range(3f, -3f));
     }
 
     // Update is called once per frame
@@ -35,9 +36,18 @@ public class PiecesScript : MonoBehaviour
         }
         if (nbrPieces == 9)
         {
-            GameManager.levelsCleared += 1;
-            nbrPieces = 0;
-            manager.GetComponent<GameManager>().LoadLevel("FixThePipes");
+            if (GlobalCountDown.TimeLeft >= TimeSpan.Zero)
+            {
+                GameManager.levelsCleared += 1;
+                nbrPieces = 0;
+                manager.GetComponent<GameManager>().LoadLevel("FixThePipes");
+            }
+            else
+            {
+                nbrPieces = 0;
+                manager.GetComponent<GameManager>().LoadLevel("GameOver");
+            }
+
         }
 
     }
