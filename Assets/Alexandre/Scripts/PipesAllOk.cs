@@ -1,7 +1,6 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
-using System;
 
 public class PipesAllOk : MonoBehaviour
 {
@@ -12,8 +11,7 @@ public class PipesAllOk : MonoBehaviour
 
     void Start()
     {
-        pipes = GameObject.FindObjectsOfType<Turn>();
-        
+        pipes = FindObjectsOfType<Turn>();
     }
 
     void test()
@@ -29,7 +27,7 @@ public class PipesAllOk : MonoBehaviour
             }
             if(i == pipes.Length - 1)
             {
-                if (GlobalCountDown.TimeLeft >= TimeSpan.Zero)
+                if (GlobalCountDown.TimeLeft >= System.TimeSpan.Zero)
                 {
                     GameManager.levelsCleared += 1;
                     manager.GetComponent<GameManager>().LoadLevel("GameScene_DragDrop");
@@ -52,7 +50,7 @@ public class PipesAllOk : MonoBehaviour
         RaycastHit2D hit = Physics2D.Raycast(mousePos2D, Vector2.zero);
         if (hit.collider != null)
         {
-            this.test();
+            test();
         }
     }
 }

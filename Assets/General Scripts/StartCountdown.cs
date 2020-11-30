@@ -14,7 +14,7 @@ public class StartCountdown : MonoBehaviour
     {
         if (beginning == false)
         {
-            GlobalCountDown.StartCountDown(TimeSpan.FromMinutes(0.5f));
+            GlobalCountDown.StartCountDown(TimeSpan.FromMinutes(2));
             beginning = true;
         }
         

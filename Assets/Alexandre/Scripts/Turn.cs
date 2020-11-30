@@ -16,7 +16,8 @@ public class Turn : MonoBehaviour
     private void Start()
     {
         Invoke("TestIsOk", 0.1f);
-        pipes = GameObject.FindObjectsOfType<Turn>();
+        pipes = FindObjectsOfType<Turn>();
+
     }
 
     public void TestIsOk()
