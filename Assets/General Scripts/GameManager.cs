@@ -5,6 +5,7 @@ using UnityEngine.SceneManagement;
 
 public class GameManager : MonoBehaviour
 {
+    public static int levelsCleared=0;
     string LevelToLoad;
 
     public void LoadLevel(string LevelToLoad)
@@ -12,8 +13,16 @@ public class GameManager : MonoBehaviour
         SceneManager.LoadScene(LevelToLoad);
     }
 
+    public void Reset()
+    {
+        levelsCleared = 0;
+        StartCountdown.beginning = false;
+    }
+
     public void QuitGame()
     {
         Application.Quit();
     }
+
+    
 }

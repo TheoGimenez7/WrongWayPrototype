@@ -7,6 +7,8 @@ public class ItemSlot : MonoBehaviour, IDropHandler {
     [SerializeField]
     private string TheSearchedPiece = "";
 
+    public GameObject manager;
+
     public static int nombrePièceOk = 0;
 
     public void OnDrop (PointerEventData eventData) {
@@ -16,7 +18,8 @@ public class ItemSlot : MonoBehaviour, IDropHandler {
             if (eventData.pointerDrag.gameObject.name == TheSearchedPiece) {
                 nombrePièceOk += 1;
                 if (nombrePièceOk == 4) {
-                    Debug.Log ("Changement de scène");
+                    GameManager.levelsCleared += 1;
+                    manager.GetComponent<GameManager>().LoadLevel("GameOver");
                 }
             }
         }

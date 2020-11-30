@@ -8,6 +8,8 @@ public class PiecesScript : MonoBehaviour
     private Vector3 RightPosition;
     public bool InRightPosition;
     public bool Selected;
+    public static int nbrPieces = 0;
+    public GameObject manager;
     // Start is called before the first frame update
     void Start()
     {
@@ -27,8 +29,16 @@ public class PiecesScript : MonoBehaviour
                     transform.position = RightPosition;
                     InRightPosition = true;
                     GetComponent<SortingGroup>().sortingOrder = 0;
+                    nbrPieces += 1;
                 }
             }
         }
+        if (nbrPieces == 9)
+        {
+            GameManager.levelsCleared += 1;
+            nbrPieces = 0;
+            manager.GetComponent<GameManager>().LoadLevel("FixThePipes");
+        }
+
     }
 }

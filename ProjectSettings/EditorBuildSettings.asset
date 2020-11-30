@@ -20,4 +20,7 @@ EditorBuildSettings:
   - enabled: 1
     path: "Assets/Th\xE9o/GameScene_DragDrop.unity"
     guid: f2c65fc1590684744be909105b931335
+  - enabled: 1
+    path: Assets/Scenes/GameOver.unity
+    guid: ac05c2c57dd90c24ab4ef4f221690f7f
   m_configObjects: {}
