@@ -23,12 +23,14 @@ public class PipesAllOk : MonoBehaviour
             if (pipes[i].isOk != true)
             {
                 GameManager.levelsCleared = 0;
-                manager.GetComponent<GameManager>().LoadLevel("JigsawPuzzle");
+                manager.GetComponent<GameManager>().LoadLevel("PuzzleScene");
+                break;
             }
             if(i == pipes.Length - 1)
             {
                 GameManager.levelsCleared += 1;
                 manager.GetComponent<GameManager>().LoadLevel("GameScene_DragDrop");
+                break;
             }
         }
     }

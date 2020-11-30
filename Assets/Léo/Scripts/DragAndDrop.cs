@@ -7,11 +7,6 @@ public class DragAndDrop : MonoBehaviour
 {
     public GameObject SelectedPiece;
     int LayerOrder = 1;
-    // Start is called before the first frame update
-    void Start()
-    {
-        GameManager.levelsCleared += 1;
-    }
 
     // Update is called once per frame
     void Update()

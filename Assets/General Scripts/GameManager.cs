@@ -16,6 +16,7 @@ public class GameManager : MonoBehaviour
     public void Reset()
     {
         levelsCleared = 0;
+        ItemSlot.nombrePièceOk = 0;
         StartCountdown.beginning = false;
     }
 
