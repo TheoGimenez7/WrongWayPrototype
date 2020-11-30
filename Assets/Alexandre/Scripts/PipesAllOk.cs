@@ -4,6 +4,7 @@ using UnityEngine;
 
 public class PipesAllOk : MonoBehaviour
 {
+    public GameObject manager;
 
     private Turn[] pipes;
 
@@ -11,6 +12,7 @@ public class PipesAllOk : MonoBehaviour
     void Start()
     {
         pipes = GameObject.FindObjectsOfType<Turn>();
+        
     }
 
     void test()
@@ -20,12 +22,13 @@ public class PipesAllOk : MonoBehaviour
             pipes[i].TestIsOk();
             if (pipes[i].isOk != true)
             {
-                Debug.Log("Nope");
-                break;
+                GameManager.levelsCleared = 0;
+                manager.GetComponent<GameManager>().LoadLevel("JigsawPuzzle");
             }
             if(i == pipes.Length - 1)
             {
-                Debug.Log("You win");
+                GameManager.levelsCleared += 1;
+                manager.GetComponent<GameManager>().LoadLevel("GameScene_DragDrop");
             }
         }
     }
