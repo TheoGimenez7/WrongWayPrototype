@@ -7,9 +7,10 @@ public class ColliderOk : MonoBehaviour
 
     public bool ok;
 
-    void OnTriggerEnter2D()
+    void OnTriggerStay2D(Collider2D col)
     {
         ok = true;
+        col.gameObject.GetComponentInParent<Turn>().Invoke("TestIsOk", 0.1f);
     }
 
     void OnTriggerExit2D()

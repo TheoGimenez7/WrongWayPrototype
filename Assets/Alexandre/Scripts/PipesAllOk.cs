@@ -15,6 +15,7 @@ public class PipesAllOk : MonoBehaviour
             pipes[i].TestIsOk();
             if (pipes[i].isOk != true)
             {
+                Debug.Log("" + pipes[i].name + "," + i);
                 GameManager.levelsCleared = 0;
                 manager.GetComponent<GameManager>().LoadLevel("PuzzleScene");
                 break;
