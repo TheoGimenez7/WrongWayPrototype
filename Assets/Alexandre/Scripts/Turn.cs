@@ -11,13 +11,10 @@ public class Turn : MonoBehaviour
     public GameObject coll3;
     public GameObject coll4;
     public bool isOk;
-    private Turn[] pipes;
 
     private void Start()
     {
         Invoke("TestIsOk", 0.1f);
-        pipes = FindObjectsOfType<Turn>();
-
     }
 
     public void TestIsOk()
@@ -65,10 +62,6 @@ public class Turn : MonoBehaviour
         {
             hit.collider.gameObject.transform.Rotate(0.0f, 0.0f, 90.0f, Space.Self);
         }
-
-        for (int i = 0; i < pipes.Length; i++)
-        {
-            pipes[i].Invoke("TestIsOk", 0.2f);
-        }
+        Invoke("TestIsOk", 0.2f);
     }
 }
