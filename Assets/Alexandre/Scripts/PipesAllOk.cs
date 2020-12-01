@@ -6,13 +6,7 @@ public class PipesAllOk : MonoBehaviour
 {
     public GameObject manager;
 
-    private Turn[] pipes;
-
-
-    void Start()
-    {
-        pipes = FindObjectsOfType<Turn>();
-    }
+    public Turn[] pipes;
 
     void test()
     {
